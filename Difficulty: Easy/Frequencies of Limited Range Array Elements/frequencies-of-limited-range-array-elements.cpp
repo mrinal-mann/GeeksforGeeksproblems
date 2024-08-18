@@ -8,19 +8,17 @@ class Solution {
   public:
     // Function to count the frequency of all elements from 1 to N in the array.
     void frequencyCount(vector<int>& arr, int N, int P) {
-        vector<int> hash(P + 1, 0);
-        for (int i = 0; i < arr.size(); ++i) {
-            if (arr[i] <= P) {
-                hash[arr[i]] += 1;
-            }
+        int hash[P+1]={0};
+        for(int i=0;i<N;i++){
+            hash[arr[i]]+=1;
         }
         
-        // Update the original array with the frequency counts
-        for (int i = 0; i < N; ++i) {
-            if (i + 1 <= P) {
-                arr[i] = hash[i + 1];
-            } else {
-                arr[i] = 0; // Elements out of the range 1 to P should be set to 0
+        for(int i=0;i<N;i++){
+            if(i+1<=P){
+            arr[i]=hash[i+1];
+            }
+            else{
+                arr[i]=0;
             }
         }
     }
