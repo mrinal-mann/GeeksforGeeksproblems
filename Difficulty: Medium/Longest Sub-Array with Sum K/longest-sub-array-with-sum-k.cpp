@@ -19,7 +19,7 @@ public:
                 maxlen = max(maxlen, i + 1);
             }
 
-            // Calculate the remaining sum needed to reach K
+            // Calculate the remaining sum needed to reach K using reverse mathematics
             long long rem = sum - K;
 
             // If the remaining sum is found in the map, update the maximum length
